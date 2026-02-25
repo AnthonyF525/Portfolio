@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Orbitron', 'system-ui', 'sans-serif'],
+        body: ['Rajdhani', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       colors: {
@@ -85,8 +86,29 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { opacity: "0.4" },
-          "50%": { opacity: "1" },
+          "0%, 100%": { opacity: "0.3", boxShadow: "0 0 20px hsl(210 100% 50% / 0.2)" },
+          "50%": { opacity: "1", boxShadow: "0 0 60px hsl(210 100% 50% / 0.4)" },
+        },
+        "hud-scan": {
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+          "50%": { opacity: "0.5" },
+          "100%": { transform: "translateY(100%)", opacity: "0" },
+        },
+        "typing": {
+          "from": { width: "0" },
+          "to": { width: "100%" },
+        },
+        "blink-caret": {
+          "from, to": { borderColor: "transparent" },
+          "50%": { borderColor: "hsl(var(--primary))" },
+        },
+        "glitch": {
+          "0%": { transform: "translate(0)" },
+          "20%": { transform: "translate(-2px, 2px)" },
+          "40%": { transform: "translate(-2px, -2px)" },
+          "60%": { transform: "translate(2px, 2px)" },
+          "80%": { transform: "translate(2px, -2px)" },
+          "100%": { transform: "translate(0)" },
         },
       },
       animation: {
@@ -94,6 +116,10 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "hud-scan": "hud-scan 3s linear infinite",
+        "typing": "typing 2s steps(20) forwards",
+        "blink-caret": "blink-caret 0.75s step-end infinite",
+        "glitch": "glitch 0.3s ease-in-out",
       },
     },
   },
